@@ -1,0 +1,11 @@
+# Optional: configure remote state in S3
+# Copy to backend.tf and update values when enabling remote state
+terraform {
+backend "s3" {
+bucket = "my-tf-stat-bucket5b2"
+key = "eks/terraform.tfstate"
+region = "eu-north-1"
+dynamodb_table = "terraform-locks"
+encrypt = true
+}
+}
