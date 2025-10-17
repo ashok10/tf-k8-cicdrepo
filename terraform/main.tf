@@ -37,11 +37,6 @@ key_name = try(var.ssh_key_name, null)
 }
 }
 
-
-manage_aws_auth = true
-}
-
-
 # Data sources to wire kubernetes/helm providers
 data "aws_eks_cluster" "cluster" {
 name = module.eks.cluster_id
