@@ -23,13 +23,13 @@ version = "~> 19.0"
 
 cluster_name = var.cluster_name
 cluster_version = "1.27"
-subnets = module.vpc.private_subnets
+vpc_subnet_ids = module.vpc.private_subnets
 
 
 vpc_id = module.vpc.vpc_id
 
 
-node_groups = {
+eks_managed_node_groups = {
 default = {
 desired_capacity = var.node_group_desired_capacity
 instance_types = [var.node_instance_type]
@@ -38,7 +38,7 @@ key_name = try(var.ssh_key_name, null)
 }
 
 
-manage_aws_auth = true
+enable_cluster_creator_admin_permissions = true
 }
 
 
