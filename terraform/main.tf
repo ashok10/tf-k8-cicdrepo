@@ -58,3 +58,4 @@ create_namespace = true
 
 values = [file("${path.module}/helm-values/nginx-values.yaml")]
 }
+}
