@@ -2,8 +2,8 @@ name: Terraform PR Plan
 
 on:
   pull_request:
-   paths:
-     - 'terraform/**'
+    paths:
+      - 'terraform/**'
 
 jobs:
   terraform:
@@ -13,7 +13,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-
 
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v2
