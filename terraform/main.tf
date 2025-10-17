@@ -54,7 +54,6 @@ data "aws_eks_cluster_auth" "cluster" {
 name = module.eks.cluster_id
 }
 
-
 # Sample Helm release (NGINX ingress) via Terraform helm provider
 resource "helm_release" "nginx_ingress" {
 name = "ingress-nginx"
