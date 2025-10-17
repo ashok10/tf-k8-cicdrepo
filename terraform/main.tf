@@ -18,7 +18,7 @@ enable_nat_gateway = true
 # EKS cluster
 module "eks" {
 source = "terraform-aws-modules/eks/aws"
-version = "~> 18.0"
+version = "18.31.2"
 
 
 cluster_name = var.cluster_name
