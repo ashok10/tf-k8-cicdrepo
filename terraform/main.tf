@@ -7,11 +7,9 @@ module "vpc" {
 name = "eks-vpc"
 cidr = var.vpc_cidr
 
-
 azs = slice(data.aws_availability_zones.available.names, 0, 2)
 public_subnets = var.public_subnets
 private_subnets = var.private_subnets
-
 
 enable_nat_gateway = true
 }
@@ -64,14 +62,4 @@ create_namespace = true
 
 
 values = [file("${path.module}/helm-values/nginx-values.yaml")]
-}
-
-
-output "cluster_name" {
-value = module.eks.cluster_id
-}
-
-
-output "region" {
-value = var.region
 }
